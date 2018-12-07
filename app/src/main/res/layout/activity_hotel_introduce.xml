@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/bg_welcome"
+    tools:context=".activity.introduce.HotelIntroduceActivity">
+
+    <com.dexin.wanchuan.iptv3.widget.mzbanner.MZBannerView
+        android:id="@+id/mzbv_hotel_intro"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:canLoop="true"
+        app:open_mz_mode="false"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="40dp"
+        android:contentDescription="@null"
+        android:src="@mipmap/icon_previous"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical|end"
+        android:layout_marginEnd="40dp"
+        android:contentDescription="@null"
+        android:src="@mipmap/icon_next"/>
+</FrameLayout>

@@ -5,6 +5,7 @@ import android.content.Context;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.support.annotation.NonNull;
 import android.support.v4.view.LayoutInflaterCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.app.AppCompatDelegate;
@@ -12,6 +13,11 @@ import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.TextView;
+
+import com.lzy.okgo.OkGo;
+
+import io.reactivex.disposables.CompositeDisposable;
+import io.reactivex.disposables.Disposable;
 
 public abstract class BaseActivity extends AppCompatActivity implements View.OnClickListener {
     @Override
@@ -42,6 +48,13 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
         initDate();
     }
 
+    @Override
+    protected void onDestroy() {
+        OkGo.getInstance().cancelTag(this);
+        dispose();
+        super.onDestroy();
+    }
+
     protected abstract void initDate();
 
     protected abstract void initListener();
@@ -66,4 +79,18 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
     };
 
     public abstract void refreshUI(Message msg);
+
+
+    //---------------------------------------------------------Note 统一管理所有的'订阅生命周期'-----------------------------------------------------
+    //---------------------------------------------------------↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓-----------------------------------------------------
+    private CompositeDisposable mCompositeDisposable;
+
+    public void addDisposable(@NonNull final Disposable disposable) {
+        if (mCompositeDisposable == null) mCompositeDisposable = new CompositeDisposable();
+        if (!disposable.isDisposed()) mCompositeDisposable.add(disposable);
+    }
+
+    private void dispose() {
+        if ((mCompositeDisposable != null) && !mCompositeDisposable.isDisposed()) mCompositeDisposable.dispose();
+    }
 }

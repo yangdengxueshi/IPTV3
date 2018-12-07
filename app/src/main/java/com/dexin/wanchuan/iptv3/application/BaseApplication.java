@@ -7,6 +7,8 @@ import android.content.Intent;
 import android.graphics.Typeface;
 import android.util.Log;
 
+import com.blankj.utilcode.util.Utils;
+import com.dexin.wanchuan.iptv3.BuildConfig;
 import com.dexin.wanchuan.iptv3.bean.Settings;
 import com.dexin.wanchuan.iptv3.util.HttpUtil;
 import com.dexin.wanchuan.iptv3.util.IptvSP;
@@ -15,14 +17,20 @@ import com.dexin.wanchuan.iptv3.widget.DigitalClock;
 import com.google.gson.Gson;
 import com.google.gson.JsonSyntaxException;
 import com.google.gson.reflect.TypeToken;
+import com.lzy.okgo.OkGo;
+import com.lzy.okgo.interceptor.HttpLoggingInterceptor;
+import com.vondear.rxtool.RxTool;
 
 import java.io.IOException;
 import java.util.Calendar;
 import java.util.Timer;
 import java.util.TimerTask;
+import java.util.concurrent.TimeUnit;
+import java.util.logging.Level;
 
 import okhttp3.Call;
 import okhttp3.Callback;
+import okhttp3.OkHttpClient;
 import okhttp3.Response;
 
 /**
@@ -89,6 +97,9 @@ public class BaseApplication extends Application {
             }
         };
         timer.schedule(task, 2000, 30 * 1000);
+        RxTool.init(this);
+        Utils.init(this);
+        initOkGo();
     }
 
     private void getDataFromServer() {
@@ -171,5 +182,20 @@ public class BaseApplication extends Application {
 
     private void broadcastSettingUpdate() {
         getApplicationContext().sendBroadcast(new Intent(ACTION_SETTING_UPDATE));
+    }
+
+    private void initOkGo() {
+        final OkHttpClient.Builder lOkHttpClientBuilder = new OkHttpClient.Builder();
+        // 配置log
+        if (BuildConfig.DEBUG) {
+            final HttpLoggingInterceptor lHttpLoggingInterceptor = new HttpLoggingInterceptor("TAG_OkGo");
+            lHttpLoggingInterceptor.setPrintLevel(HttpLoggingInterceptor.Level.BODY);        //log打印级别，决定了log显示的详细程度
+            lHttpLoggingInterceptor.setColorLevel(Level.INFO);                               //log颜色级别，决定了log在控制台显示的颜色
+            lOkHttpClientBuilder.addInterceptor(lHttpLoggingInterceptor);                    //添加OkGo默认debug日志
+        }
+        // 配置超时时间(缺省60s)
+        lOkHttpClientBuilder.readTimeout(5, TimeUnit.SECONDS).writeTimeout(5, TimeUnit.SECONDS).connectTimeout(5, TimeUnit.SECONDS);
+        // 其它统一的配置
+        OkGo.getInstance().init(this).setOkHttpClient(lOkHttpClientBuilder.build()).setRetryCount(3);
     }
 }

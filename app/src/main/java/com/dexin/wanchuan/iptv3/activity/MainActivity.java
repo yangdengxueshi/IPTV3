@@ -17,6 +17,7 @@ import android.widget.ListView;
 
 import com.dexin.wanchuan.iptv3.R;
 import com.dexin.wanchuan.iptv3.activity.hotel.SceneryActivity;
+import com.dexin.wanchuan.iptv3.activity.introduce.HotelIntroduceActivity;
 import com.dexin.wanchuan.iptv3.activity.live.LivePlayerActivity;
 import com.dexin.wanchuan.iptv3.adapter.HotelServiceAdapter;
 import com.dexin.wanchuan.iptv3.adapter.MainMenuAdapter;
@@ -242,7 +243,7 @@ public class MainActivity extends BaseActivity {
         mainMenus.add(dinner);
         MainMenu service = new MainMenu(R.mipmap.icon_service, getResources().getString(R.string.service), MainActivity.class, false);  // service
         mainMenus.add(service);
-        MainMenu hotel = new MainMenu(R.mipmap.icon_hotel, getResources().getString(R.string.hotel), MainActivity.class, true);   // 酒店指南
+        MainMenu hotel = new MainMenu(R.mipmap.icon_hotel, getResources().getString(R.string.hotel), HotelIntroduceActivity.class, true);   // 酒店指南
         mainMenus.add(hotel);
         MainMenu money = new MainMenu(R.mipmap.icon_money, getResources().getString(R.string.money), MainActivity.class, true);   // 消费查询
         mainMenus.add(money);

@@ -50,7 +50,8 @@
         </activity>
         <activity android:name=".activity.WakeUpActivity"/>
         <activity android:name=".activity.live.LivePlayerActivity"/>
-        <activity android:name=".activity.hotel.SceneryActivity"></activity>
+        <activity android:name=".activity.hotel.SceneryActivity"/>
+        <activity android:name=".activity.introduce.HotelIntroduceActivity"/>
     </application>
 
 </manifest>
