@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="#99000000"
+    >
+
+    <ListView
+        android:id="@+id/lv_service_hotel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:listSelector="@drawable/bg_main_service_item"
+        android:focusable="true"
+        android:nextFocusDown="@id/lv_service_hotel">
+    </ListView>
+
+
+    <!--</com.dexin.wanchuan.iptv3.widget.tvrecyclerview.TvRecyclerView>-->
+    <!--<TextView-->
+    <!--android:id="@+id/tv_wake_service"-->
+    <!--android:text="@string/wake_service"-->
+    <!--android:nextFocusDown="@id/tv_clothes_service"-->
+    <!--style="@style/popupwindow_style_main_menu_item"/>-->
+    <!--<TextView-->
+    <!--android:id="@+id/tv_clothes_service"-->
+    <!--android:text="@string/clothes_service"-->
+    <!--android:nextFocusDown="@id/tv_goods_service"-->
+    <!--android:nextFocusUp="@id/tv_wake_service"-->
+    <!--style="@style/popupwindow_style_main_menu_item"/>-->
+    <!--<TextView-->
+    <!--android:id="@+id/tv_goods_service"-->
+    <!--android:text="@string/goods_service"-->
+    <!--android:nextFocusDown="@id/tv_home_service"-->
+    <!--android:nextFocusUp="@id/tv_clothes_service"-->
+    <!--style="@style/popupwindow_style_main_menu_item"/>-->
+    <!--<TextView-->
+    <!--android:id="@+id/tv_home_service"-->
+    <!--android:text="@string/home_service"-->
+    <!--android:nextFocusDown="@id/tv_check_service"-->
+    <!--android:nextFocusUp="@id/tv_goods_service"-->
+    <!--style="@style/popupwindow_style_main_menu_item"-->
+    <!--/>-->
+    <!--<TextView-->
+    <!--android:id="@+id/tv_check_service"-->
+    <!--android:text="@string/check_service"-->
+    <!--android:nextFocusUp="@id/tv_wake_service"-->
+    <!--style="@style/popupwindow_style_main_menu_item"/>-->
+</LinearLayout>

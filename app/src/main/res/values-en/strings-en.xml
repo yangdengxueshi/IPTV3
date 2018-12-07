@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">IPTV3</string>
+    <string name="room">room</string>
+    <string name="live_player_click_exit">Press again to exit.</string>
+</resources>

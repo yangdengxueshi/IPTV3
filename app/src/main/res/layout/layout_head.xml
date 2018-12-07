@@ -1,0 +1,49 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginLeft="80dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="80dp"
+                android:layout_marginBottom="20dp">
+
+    <TextView
+        android:id="@+id/activity_title_name"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:gravity="center_vertical"
+        android:textSize="30sp"
+        android:textColor="#ffffff"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
+
+        <com.dexin.wanchuan.iptv3.widget.DigitalClock
+            android:id="@+id/cur_time_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="kk:mm"
+            android:layout_gravity="center_horizontal"
+            android:textColor="#ffffff"
+            android:textIsSelectable="false"
+            android:textSize="36sp"
+            tools:ignore="HardcodedText"/>
+
+        <com.dexin.wanchuan.iptv3.widget.DigitalClock
+            android:id="@+id/cur_date_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="yyyy/MM/dd  EEEE"
+            android:gravity="center_horizontal"
+            android:textColor="#ffffff"
+            android:textIsSelectable="false"
+            android:textSize="15sp"
+            tools:ignore="HardcodedText"/>
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@mipmap/bg_welcome"
+                tools:context="com.dexin.wanchuan.iptv3.activity.WelcomeActivity">
+
+    <com.dexin.wanchuan.iptv3.widget.mzbanner.MZBannerView
+        android:id="@+id/mz_bg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        app:canLoop="true"
+        app:indicatorAlign="center"
+        app:indicatorPaddingLeft="10dp"
+        app:open_mz_mode="false">
+
+    </com.dexin.wanchuan.iptv3.widget.mzbanner.MZBannerView>
+
+    <LinearLayout
+        android:layout_width="900dp"
+        android:layout_height="450dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/bg_welcome_text"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="35dp"
+                android:src="@mipmap/iv_welcome"/>
+
+            <TextView
+                android:id="@+id/tv_user_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="30dp"
+                android:text="Dear User Lady/Jentman"
+                android:textColor="@color/white"
+                android:textSize="18sp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:lineSpacingExtra="15dp"
+                android:paddingLeft="65dp"
+                android:paddingRight="50dp"
+                android:text="    诚挚欢迎阁下下榻本酒店，谨代表酒店全体员工衷心祝您在此拥有温馨愉悦，
+难以忘怀的旅居体验。我们将倾情为您呈现豪华至尊礼遇。"
+                android:textColor="@color/white"
+                android:textSize="16sp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:lineSpacingExtra="13dp"
+                android:paddingLeft="65dp"
+                android:paddingRight="50dp"
+                android:text="      We sincerely welcome you to stay at this hotel.On behalf of all the staff of the hotel,I sincerely wish you a warm and enjoyable and unforgettable exeperience.We will show you luxury and supreme courtesy."
+                android:textColor="@color/white"
+                android:textSize="16sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_marginTop="50dp"
+                android:layout_marginRight="60dp"
+                android:text="七天连锁酒店·总经理"
+                android:textColor="@color/white"
+                android:textSize="20sp"/>
+        </LinearLayout>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@mipmap/line_colume_welcome"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <com.dexin.wanchuan.iptv3.widget.DigitalClock
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:contentDescription="kk:mm"
+                android:textColor="@color/white"
+                android:textSize="26sp"/>
+
+            <com.dexin.wanchuan.iptv3.widget.DigitalClock
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:contentDescription="yyyy/MM/dd EE"
+                android:textColor="@color/white"
+                android:textSize="16sp"/>
+
+            <ImageView
+                android:id="@+id/cur_weather_img"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="30dp"
+                android:scaleType="centerCrop"
+                android:src="@mipmap/sun"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="12℃ 晴"
+                android:textColor="@color/white"
+                android:textSize="18sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="13dp"
+                android:text="12℃ ~ 20℃"
+                android:textColor="@color/white"
+                android:textSize="14sp"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="13dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="6dp"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <com.dexin.wanchuan.iptv3.widget.DigitalClock
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="EEEE"
+                        android:textColor="@color/white"
+                        android:textSize="10sp"/>
+
+                    <ImageView
+                        android:id="@+id/second_day_weather_img"
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:src="@mipmap/moon"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="6dp"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <com.dexin.wanchuan.iptv3.widget.DigitalClock
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="EEEE"
+                        android:textColor="@color/white"
+                        android:textSize="10sp"/>
+
+                    <ImageView
+                        android:id="@+id/third_day_weather_img"
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:src="@mipmap/rainy"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <com.dexin.wanchuan.iptv3.widget.DigitalClock
+                        android:id="@+id/fourth_day_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="EEEE"
+                        android:textColor="@color/white"
+                        android:textSize="10sp"/>
+
+                    <ImageView
+                        android:id="@+id/fourth_day_weather_img"
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:src="@mipmap/cloudy"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_chinese"
+                android:layout_width="120dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/bg_language_text_unfocused"
+                android:focusable="true"
+                android:gravity="center"
+                android:text="中文"
+                android:textColor="@color/white"
+                android:textSize="18sp"/>
+
+            <TextView
+                android:id="@+id/tv_english"
+                android:layout_width="120dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/bg_language_text_unfocused"
+                android:focusable="true"
+                android:gravity="center"
+                android:text="English"
+                android:textColor="@color/white"
+                android:textSize="18sp"/>
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

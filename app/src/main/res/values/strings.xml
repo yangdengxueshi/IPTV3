@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">IPTV3</string>
+    <string name="room">room</string>
+    <string name="live_player_click_exit">Press again to exit.</string>
+    <string name="live">LIVE</string>
+    <string name="vod">vod</string>
+    <string name="scenery">scenery</string>
+    <string name="dinner">dinner</string>
+    <string name="service">service</string>
+    <string name="hotel">hotel</string>
+    <string name="wake_service">Wake Service</string>
+    <string name="clothes_service">clothes service</string>
+    <string name="goods_service">goods service</string>
+    <string name="home_service">home service</string>
+    <string name="check_service">check service</string>
+    <string name="cancel">cancel</string>
+    <string name="submit">submit</string>
+    <string name="money">money</string>
+    <string name="year">year</string>
+    <string name="month">month</string>
+    <string name="day">day</string>
+    <string name="hour">hour</string>
+    <string name="min">min</string>
+</resources>

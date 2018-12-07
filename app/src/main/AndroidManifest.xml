@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          xmlns:tools="http://schemas.android.com/tools"
+          package="com.dexin.wanchuan.iptv3">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <!-- 系统警告窗:TODO 在其他应用之上显示内容 -->
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <!-- 修改音频设置 -->
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
+    <!-- 屏蔽掉HOME键 -->
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD"/>
+    <!-- 写SD卡 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <!-- 读SD卡 -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <!-- 改变配置 -->
+    <uses-permission android:name="android.permission.CHANGE_CONFIGURATION"/>
+    <!-- 连接互联网 -->
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <!-- 访问WIFI状态 -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <!-- 改变WIFI状态 -->
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <!-- 改变WIFI多播状态 -->
+    <uses-permission android:name="android.permission.CHANGE_WIFI_MULTICAST_STATE"/>
+    <!-- 访问网络状态 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <!-- 接收启动完成的广播 -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+
+    <application
+        android:name=".application.BaseApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/TranslucentTheme"
+        tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".activity.MainActivity"/>
+        <activity
+            android:name=".activity.WelcomeActivity"
+            android:launchMode="singleTask">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".activity.WakeUpActivity"/>
+        <activity android:name=".activity.live.LivePlayerActivity"/>
+        <activity android:name=".activity.hotel.SceneryActivity"></activity>
+    </application>
+
+</manifest>

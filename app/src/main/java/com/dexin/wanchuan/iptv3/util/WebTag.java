@@ -1,0 +1,55 @@
+package com.dexin.wanchuan.iptv3.util;
+
+public class WebTag {
+    public static final String PATH_LOGO_IMAGE = "../res/logo/logo.png"; // 获取LOGO
+    public static final String PATH_WATERMARK_IMAGE = "../res/logo/watermark.png"; // 获取直播水印
+    public static final String PATH_WATERMARK_VOD_IMAGE = "../res/logo/watermark_vod.png"; // 获取点播水印
+    public static final String PATH_WEICOME_ACTIVITY_BACK_IMAGE = "../res/logo/welcome_background.png"; // 获取欢迎界面背景图片
+    public static final String TAG_CENTRAL_SERVER = "getCentralServerIp"; // 开机视频
+    public static final String TAG_BOOT_VIDEO = "GetAdvVideoEM"; // 开机视频
+    public static final String TAG_VIDEO_AD = "GetAdvVideo"; // 广告视频
+    public static final String TAG_CURRENT_TIMEMILLIS = "GetCurrentTimeMillis"; // 获取系统时间
+    public static final String TAG_SETTINGS = "GetSettings"; // 获取配置
+    public static final String TAG_CLIENT = "GetClient";// 获取客户端信息
+    public static final String TAG_TEXT_AD = "GetSubtitles";// 获取滚动广告
+    public static final String TAG_TEXT_AD_STYLE = "GetSubtitleStyle";// 获取滚动广告样式
+    public static final String TAG_GET_FORCED_WATCH = "GetEmergencyBroadcast";// 获取强制观看
+    public static final String TAG_GET_FORCED_PROGRAM = "GetInStream"; // 获取强制观看
+    public static final String TAG_UPDATE_CLIENT = "UpdateClient";// 获取客户端信息
+    public static final String TAG_CONSUME = "GetConsume";// 获取消费清单
+    public static final String TAG_ADD_CONSUME = "AddConsume";// 添加消费
+    public static final String TAG_LIVE_PACKAGE = "GetLivePackage";// 获取直播包清单
+    public static final String TAG_LIVE_TV = "GetLiveTV";// 获取直播包清单
+    public static final String TAG_LIVE_EPG = "GetLiveEPG";// 获取直播电子节目指南
+    public static final String TAG_LIVE_REC = "GetRecTV"; // 获取获取时移清单
+    public static final String TAG_LIVE_REC_PRO = "GetRecProgram"; // 获取获取时移详情
+    public static final String TAG_INTRO_TYPE = "GetHotelType";// 酒店介绍分类
+    public static final String TAG_INTRO_URL = "GetHotel";// 酒店介绍列表
+    public static final String TAG_VOD_TYPE = "GetVodType";// 点播节目分类
+    public static final String TAG_VOD_URL = "GetVodUrl";// 点播节目分类
+    public static final String TAG_VOD = "GetVod";// 点播节目分类
+    public static final String TAG_VOD_UPDATE_RATE = "UpdateVodClickRate"; // 更新影片点击率
+    public static final String TAG_ADD_FAVORITE = "AddFavorite"; // 添加收藏
+    public static final String TAG_REMOVE_FAVORITE = "RemoveFavorite"; // 取消收藏
+    public static final String TAG_GET_FAVORITE = "GetFavorite"; // 获取所有收藏
+    //	public static final String TAG_VIDEO_IMG_AD = "GetAdvImageEM"; // 广告图片
+    public static final String TAG_VIDEO_BOOT_IMG_AD = "GetAdvImage"; // 获取首页广告图片
+    public static final String TAG_GET_SCENERY = "GetScenery"; // 获取景区列表
+    public static final String TAG_GET_ALL_HUAXI_HOSIPITAL = "GetHuaXi"; // 获取华西通对应的华西名下所有医院
+    public static final String TAG_GET_VERSION = "GetVersion"; // 获取最新版本信息
+    public static final String TAG_GET_FOOD_TYPE = "GetFoodType"; // 获取餐饮类型
+    public static final String TAG_GET_FOOD = "GetFood"; // 获取菜品
+    public static final String TAG_GET_SHOP_TYPE = "GetCommodityType"; // 获取小商场商品类型如酒类、茶类等
+    public static final String TAG_GET_SHOP = "GetCommodity"; // 获取小商品详情
+    public static final String TAG_GET_ORDER = "GetFoodOrder"; //获取订单
+    public static final String TAG_ADD_ORDER = "AddFoodOrder"; //预订菜品
+    public static final String TAG_GET_PRODUCT = "GetProduct"; // 获取餐饮类型
+    public static final String TAG_GET_TRAVEL = "GetProduct"; // 获取餐饮类型
+    public static final String TAG_GET_WELCOME_WORD = "GetWelcomWord"; // 获取欢迎词
+    public static final String TAG_GET_CHECK_IN_INFO = "GetCheckInInfo"; // 获取登记信息,如客人姓名以及性别等
+    public static final String CHECKING_OUT_REQUEST_1 = "AddClientCheckOutOrder"; // 退房请求
+    public static final String CHECKING_OUT_REQUEST_2 = "GetClientCheckOutOrder"; // 退房请求
+    public static final String ADD_GOODS_ORDER = "AddGoodsOrder"; // 客房服务请求,如管家服务、叫醒服务、洗衣服务等
+    public static final String GET_GOODS = "GetGoods"; // 获取所有租借物品
+    public static final String GET_GOODS_ORDER = "GetGoodsOrder"; // 获取所有服务状态
+}

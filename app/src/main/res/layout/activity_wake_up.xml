@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/bg_welcome"
+    tools:context="com.dexin.wanchuan.iptv3.activity.WakeUpActivity">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#99000000"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="60dp"
+        android:layout_marginRight="60dp"
+        android:layout_marginTop="20dp"
+        >
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="叫醒服务"
+            android:textColor="@color/white"
+            android:textSize="22sp"
+            />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1"
+            />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="17:14"
+                android:textColor="@color/white"
+                android:textSize="24sp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2018/06/25 Sunday"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:text="请设置叫醒时间："
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        >
+
+        <!--年-->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+            <EditText
+                android:id="@+id/edt_year"
+                style="@style/style_wake_up_edt"
+                android:text="2018"/>
+
+            <View
+                style="@style/style_wake_up_text_underline"/>
+        </LinearLayout>
+
+        <TextView
+            style="@style/style_wake_up_text_name"
+            android:text="@string/year"/>
+
+        <!--月-->
+        <LinearLayout
+            style="@style/style_wake_up_ll">
+
+            <EditText
+                android:id="@+id/edt_month"
+                style="@style/style_wake_up_edt"
+                android:text="5"/>
+
+            <View
+                style="@style/style_wake_up_text_underline"/>
+        </LinearLayout>
+
+        <TextView
+            style="@style/style_wake_up_text_name"
+            android:text="@string/month"/>
+
+        <!--日-->
+        <LinearLayout
+            style="@style/style_wake_up_ll">
+
+            <EditText
+                android:id="@+id/edt_day"
+                style="@style/style_wake_up_edt"
+                android:text="25"/>
+
+            <View
+                style="@style/style_wake_up_text_underline"/>
+        </LinearLayout>
+
+        <TextView
+            style="@style/style_wake_up_text_name"
+            android:text="@string/day"/>
+
+        <!--时-->
+        <LinearLayout
+            style="@style/style_wake_up_ll">
+
+            <EditText
+                android:id="@+id/edt_hour"
+                style="@style/style_wake_up_edt"
+                android:text="18"/>
+
+            <View
+                style="@style/style_wake_up_text_underline"/>
+        </LinearLayout>
+
+        <TextView
+            style="@style/style_wake_up_text_name"
+            android:text="@string/hour"/>
+
+
+        <!--分-->
+        <LinearLayout
+            style="@style/style_wake_up_ll">
+
+            <EditText
+                android:id="@+id/edt_min"
+                style="@style/style_wake_up_edt"
+                android:text="56"/>
+
+            <View
+                style="@style/style_wake_up_text_underline"/>
+        </LinearLayout>
+
+        <TextView
+            style="@style/style_wake_up_text_name"
+            android:text="@string/min"/>
+    </LinearLayout>
+
+
+    <!--按钮-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="100dp"
+        >
+
+        <TextView
+            android:id="@+id/cancel"
+            android:layout_width="110dp"
+            android:layout_height="30dp"
+            android:layout_marginRight="50dp"
+            android:background="@drawable/bg_language_text_unfocused"
+            android:gravity="center"
+            android:text="@string/cancel"
+            android:focusable="true"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            />
+
+
+        <TextView
+            android:id="@+id/submit"
+            android:layout_width="110dp"
+            android:layout_height="30dp"
+            android:background="@drawable/bg_language_text_unfocused"
+            android:gravity="center"
+            android:text="@string/submit"
+            android:focusable="true"
+            android:textColor="@color/white"
+            android:textSize="12sp"/>
+
+    </LinearLayout>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="20dp"
+        android:textSize="12sp"
+        android:textColor="@color/white"
+        android:text="请知悉：时间为24小时制"
+        />
+</RelativeLayout>
