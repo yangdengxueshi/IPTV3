@@ -5,7 +5,7 @@ android {
     //noinspection GroovyAssignabilityCheck
     compileSdkVersion 25
     //noinspection GroovyAssignabilityCheck
-    buildToolsVersion '26.0.2'
+    buildToolsVersion '28.0.3'
 
     lintOptions {
         abortOnError false
