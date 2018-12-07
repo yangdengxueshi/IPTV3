@@ -27,6 +27,7 @@ public class WebTag {
     public static final String TAG_INTRO_URL = "GetHotel";// 酒店介绍列表
     public static final String TAG_BG_MUSIC_LIST = "apk/getClientBackgroundMusics";// 背景音乐列表
     public static final String TAG_BG_MUSIC_SINGLE = "res/adv/music/";// 单首背景音乐
+    public static final String TAG_BG_IMAGE_LIST = "apk/getClientBackgroundImages";// 背景图片列表
     public static final String TAG_VOD_TYPE = "GetVodType";// 点播节目分类
     public static final String TAG_VOD_URL = "GetVodUrl";// 点播节目分类
     public static final String TAG_VOD = "GetVod";// 点播节目分类

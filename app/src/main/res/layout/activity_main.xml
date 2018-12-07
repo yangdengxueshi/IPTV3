@@ -1,19 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@mipmap/bg_welcome"
-    tools:context="com.dexin.wanchuan.iptv3.activity.MainActivity">
+    tools:context=".activity.MainActivity">
+
+    <com.dexin.wanchuan.iptv3.widget.mzbanner.MZBannerView
+        android:id="@+id/mzbv_bg_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:canLoop="true"
+        app:open_mz_mode="false"/>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="60dp"
-        android:layout_marginRight="60dp"
-        android:layout_marginTop="20dp">
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="60dp">
 
         <TextView
             android:id="@+id/activity_title_name"
@@ -26,8 +33,7 @@
             android:layout_width="wrap_content"
             android:layout_height="50dp"
             android:scaleType="centerCrop"
-            android:src="@mipmap/ic_launcher"
-            />
+            android:src="@mipmap/ic_launcher"/>
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -35,8 +41,7 @@
             android:layout_gravity="center_vertical"
             android:layout_marginLeft="60dp"
             android:gravity="center_horizontal"
-            android:orientation="vertical"
-            >
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/tv_room_num"
@@ -44,30 +49,26 @@
                 android:layout_height="wrap_content"
                 android:text="5502"
                 android:textColor="#ffffff"
-                android:textSize="30sp"
-                />
+                android:textSize="30sp"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="-6dp"
                 android:text="@string/room"
-                android:textColor="#ffffff"
-                />
+                android:textColor="#ffffff"/>
         </LinearLayout>
 
         <View
             android:layout_width="0dp"
             android:layout_height="1dp"
-            android:layout_weight="1"
-            />
+            android:layout_weight="1"/>
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="50dp"
             android:layout_gravity="center"
-            android:src="@mipmap/sun"
-            />
+            android:src="@mipmap/sun"/>
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -75,8 +76,7 @@
             android:layout_gravity="bottom"
             android:layout_marginLeft="10dp"
             android:gravity="center"
-            android:orientation="vertical"
-            >
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/cur_weather_status"
@@ -84,8 +84,7 @@
                 android:layout_height="wrap_content"
                 android:text="12°晴"
                 android:textColor="#ffffff"
-                android:textSize="30sp"
-                />
+                android:textSize="30sp"/>
 
             <TextView
                 android:id="@+id/cur_temperature_range"
@@ -94,15 +93,14 @@
                 android:layout_marginTop="8dp"
                 android:text="9℃~12℃"
                 android:textColor="#ffffff"
-                android:textSize="15sp"
-                />
+                android:textSize="15sp"/>
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="18dp"
             android:layout_gravity="bottom"
+            android:layout_marginLeft="18dp"
             android:gravity="center_vertical"
             android:orientation="vertical">
 
@@ -110,8 +108,8 @@
                 android:id="@+id/cur_time_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:contentDescription="kk:mm"
                 android:layout_gravity="center_horizontal"
+                android:contentDescription="kk:mm"
                 android:textColor="#ffffff"
                 android:textIsSelectable="false"
                 android:textSize="36sp"/>
@@ -125,20 +123,17 @@
                 android:textColor="#ffffff"
                 android:textIsSelectable="false"
                 android:textSize="15sp"/>
-
         </LinearLayout>
-
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/ll_main_menu"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom"
         android:layout_marginBottom="80dp"
         android:background="#99000000"
-        android:visibility="invisible"
-        >
+        android:visibility="invisible">
 
         <com.dexin.wanchuan.iptv3.widget.tvrecyclerview.TvRecyclerView
             android:id="@+id/rv_main_menu"
@@ -146,9 +141,8 @@
             android:layout_height="180dp"
             app:focusScale="1.0"
             app:isAutoProcessFocus="true"
-            app:scrollMode="followScroll"
-            >
+            app:scrollMode="followScroll">
             <!--app:focusDrawable="@drawable/bg_item_menu_focus"-->
         </com.dexin.wanchuan.iptv3.widget.tvrecyclerview.TvRecyclerView>
     </LinearLayout>
-</RelativeLayout>
+</FrameLayout>

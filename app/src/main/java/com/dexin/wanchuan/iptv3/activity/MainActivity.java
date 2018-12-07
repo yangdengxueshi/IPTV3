@@ -22,18 +22,33 @@ import com.dexin.wanchuan.iptv3.activity.live.LivePlayerActivity;
 import com.dexin.wanchuan.iptv3.adapter.HotelServiceAdapter;
 import com.dexin.wanchuan.iptv3.adapter.MainMenuAdapter;
 import com.dexin.wanchuan.iptv3.application.BaseActivity;
+import com.dexin.wanchuan.iptv3.application.BaseApplication;
+import com.dexin.wanchuan.iptv3.bean.BGMusicBean;
+import com.dexin.wanchuan.iptv3.bean.BgImageBean;
 import com.dexin.wanchuan.iptv3.bean.HotelServiceMenu;
 import com.dexin.wanchuan.iptv3.bean.MainMenu;
+import com.dexin.wanchuan.iptv3.util.GsonParser;
+import com.dexin.wanchuan.iptv3.util.IptvSP;
+import com.dexin.wanchuan.iptv3.util.IptvUtil;
+import com.dexin.wanchuan.iptv3.util.WebTag;
 import com.dexin.wanchuan.iptv3.widget.CommomDialog;
 import com.dexin.wanchuan.iptv3.widget.CustomPopupWindow;
+import com.dexin.wanchuan.iptv3.widget.mzbanner.MZBannerView;
 import com.dexin.wanchuan.iptv3.widget.tvrecyclerview.TvRecyclerView;
+import com.google.gson.reflect.TypeToken;
+import com.lzy.okgo.OkGo;
+import com.lzy.okgo.callback.AbsCallback;
+import com.lzy.okgo.model.Response;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
 public class MainActivity extends BaseActivity {
-
-
+    private IptvSP mIptvSP;
     private TvRecyclerView mRv_main_menu;
     private LinearLayout mLl_main_menu;
     private boolean flag = false;
@@ -45,14 +60,37 @@ public class MainActivity extends BaseActivity {
     private Class<?> cls;
 
     @Override
-    protected void initDate() {
-        initAdapter();
-        initMusic();
+    protected void onResume() {
+        super.onResume();
+        playBgPPT();
+        switch (BaseApplication.getInstance().getSettings().getIndexArea()) {
+            case 1:// 幻灯片:
+
+                break;
+            case 2:// 视频:
+
+                break;
+            case 3:// 直播:
+
+                break;
+            default:
+        }
+        mMediaPlayer.start();
+        right_show_action();
     }
 
     @Override
-    protected void processCilck(View v) {
+    protected void onPause() {
+        pauseBgPPT();
+        mMediaPlayer.pause();
+        super.onPause();
+    }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        mMediaPlayer.stop();
+        mMediaPlayer.release();
     }
 
     @Override
@@ -61,13 +99,10 @@ public class MainActivity extends BaseActivity {
     }
 
     @Override
-    protected void initListener() {
-
-    }
-
-    @Override
     protected void initView() {
         setContentView(R.layout.activity_main);
+        ButterKnife.bind(this);
+        mIptvSP = new IptvSP(getApplicationContext());
         mRv_main_menu = findViewById(R.id.rv_main_menu);
         mLl_main_menu = findViewById(R.id.ll_main_menu);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
@@ -75,23 +110,17 @@ public class MainActivity extends BaseActivity {
     }
 
     @Override
-    protected void onResume() {
-        super.onResume();
-        mMediaPlayer.start();
-        right_show_action();
+    protected void initDate() {
+        initAdapter();
+        initMusic();
     }
 
     @Override
-    protected void onPause() {
-        super.onPause();
-        mMediaPlayer.pause();
+    protected void processCilck(View v) {
     }
 
     @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        mMediaPlayer.stop();
-        mMediaPlayer.release();
+    protected void initListener() {
     }
 
     private int index = 0;
@@ -333,4 +362,27 @@ public class MainActivity extends BaseActivity {
     }
 
 
+    //---------------------------------------------------------------------首页"背景幻灯片"逻辑-------------------------------------------------------------------------------------
+    //---------------------------------------------------------------------↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓-------------------------------------------------------------------------------------
+    @BindView(R.id.mzbv_bg_image)
+    MZBannerView mMzbvBgImage;
+
+    private void pauseBgPPT() {
+        mMzbvBgImage.pause();
+    }
+
+    private void playBgPPT() {
+        OkGo.<List<BgImageBean>>get(mIptvSP.getUrl(WebTag.TAG_BG_IMAGE_LIST) + "?mac=" + IptvUtil.getMacAddress(getApplicationContext())).tag(this).execute(new AbsCallback<List<BgImageBean>>() {
+            @Override
+            public void onSuccess(Response<List<BgImageBean>> response) {
+
+            }
+
+            @Override
+            public List<BgImageBean> convertResponse(okhttp3.Response response) throws Throwable {
+                return GsonParser.toObjectOrList(GsonParser.getJsonStr(response), new TypeToken<List<BGMusicBean>>() {
+                }.getType());
+            }
+        });
+    }
 }
