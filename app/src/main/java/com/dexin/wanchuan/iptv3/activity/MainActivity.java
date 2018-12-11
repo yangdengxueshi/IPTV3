@@ -43,6 +43,8 @@ import com.lzy.okgo.model.Response;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -58,6 +60,8 @@ public class MainActivity extends BaseActivity {
     private ArrayList<HotelServiceMenu> mServiceMenus;
     private CommomDialog mCommomDialog;
     private Class<?> cls;
+    private String inputNumber = "";
+    private Timer inputNumberTimer;
 
     @Override
     protected void onResume() {
@@ -379,10 +383,56 @@ public class MainActivity extends BaseActivity {
             }
 
             @Override
-            public List<BgImageBean> convertResponse(okhttp3.Response response) throws Throwable {
+            public List<BgImageBean> convertResponse(okhttp3.Response response) {
                 return GsonParser.toObjectOrList(GsonParser.getJsonStr(response), new TypeToken<List<BGMusicBean>>() {
                 }.getType());
             }
         });
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {//进入系统设置,对应按键为上上下下上下上下(11991919),上/下对应标志位设置为:1/9
+        int number = 0;
+        switch (keyCode) {
+            case KeyEvent.KEYCODE_BACK:
+                return true;
+            default:
+                switch (keyCode) {
+                    case KeyEvent.KEYCODE_DPAD_UP:
+                        number = 1;
+                        break;
+                    case KeyEvent.KEYCODE_DPAD_DOWN:
+                        number = 9;
+                        break;
+                }
+                if (keyCode >= KeyEvent.KEYCODE_0 && keyCode <= KeyEvent.KEYCODE_9
+                        || keyCode == KeyEvent.KEYCODE_DPAD_LEFT || keyCode == KeyEvent.KEYCODE_DPAD_RIGHT
+                        || keyCode == KeyEvent.KEYCODE_DPAD_UP || keyCode == KeyEvent.KEYCODE_DPAD_DOWN) {
+
+                    if (keyCode <= KeyEvent.KEYCODE_9) {
+                        number = keyCode - KeyEvent.KEYCODE_0;
+                    }
+                    inputNumber += number;
+                    Log.e("MainActivity", "input number----------------------- " + number + " " + inputNumber);
+                    if (inputNumber.contentEquals(mIptvSP.getPassword())) {
+                        inputNumber = "";
+                        Intent intent = new Intent();
+                        intent.setClass(this, SettingsActivity.class);
+                        startActivity(intent);
+                    }
+                    if (inputNumberTimer != null)
+                        inputNumberTimer.cancel();
+                    inputNumberTimer = new Timer();
+                    inputNumberTimer.schedule(new TimerTask() {
+
+                        @Override
+                        public void run() {
+                            inputNumber = "";
+                        }
+                    }, 2000);
+                    return false;
+                }
+                return super.onKeyDown(keyCode, event);
+        }
     }
 }

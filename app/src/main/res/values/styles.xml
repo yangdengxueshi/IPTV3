@@ -14,7 +14,6 @@
         <item name="windowNoTitle">true</item>
     </style>
 
-
     <!--自定义对话框样式-->
     <style name="dialog" parent="@android:style/Theme.Dialog">
         <item name="android:windowFrame">@null</item>

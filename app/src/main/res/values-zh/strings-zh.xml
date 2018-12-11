@@ -3,4 +3,19 @@
     <string name="app_name">IPTV3</string>
     <string name="room">房间</string>
     <string name="live_player_click_exit">再按一次退出.</string>
+    <!-- 设置 -->
+    <string name="settings_network">网络设置</string>
+    <string name="settings_network_ip">服务器地址</string>
+    <string name="settings_network_port">服务器端口</string>
+    <string name="settings_local_network">本机网络</string>
+    <string name="settings_local_mac">本机MAC</string>
+    <string name="main_menu_app">更多应用</string>
+    <string name="settings_system">系统设置</string>
+    <string name="settings_other">其他</string>
+    <string name="open_setting_failed">打开失败!</string>
+    <string name="ok">确定</string>
+    <string name="yes">是</string>
+    <string name="no">不</string>
+    <string name="cancel">取消</string>
+
 </resources>

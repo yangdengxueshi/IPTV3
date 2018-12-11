@@ -3,7 +3,7 @@ apply plugin: 'com.android.library'
 android {
     // http://tools.android.com/tech-docs/new-build-system/tips
     //noinspection GroovyAssignabilityCheck
-    compileSdkVersion 25
+    compileSdkVersion 26
     //noinspection GroovyAssignabilityCheck
     buildToolsVersion '28.0.3'
 
@@ -12,7 +12,7 @@ android {
     }
     defaultConfig {
         minSdkVersion 9
-        targetSdkVersion 25
+        targetSdkVersion 26
     }
     buildTypes {
         release {
@@ -23,7 +23,7 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    api fileTree(dir: 'libs', include: ['*.jar'])
 }
 
 

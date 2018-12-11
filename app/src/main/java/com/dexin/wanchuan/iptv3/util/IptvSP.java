@@ -76,7 +76,7 @@ public class IptvSP implements SharedPreferences.OnSharedPreferenceChangeListene
     }
 
     public String getPassword() {
-        return mShared.getString(KEY_PASSWORD, "888888");
+        return mShared.getString(KEY_PASSWORD, "11991919");
     }
 
     public void setPassword(String password) {

@@ -2,6 +2,23 @@
     <string name="app_name">IPTV3</string>
     <string name="room">room</string>
     <string name="live_player_click_exit">Press again to exit.</string>
+
+    <!-- 设置 -->
+    <string name="settings_network">Network setting</string>
+    <string name="settings_network_ip">Server IP</string>
+    <string name="settings_network_port">Server port</string>
+    <string name="settings_local_network">Local network</string>
+    <string name="settings_local_mac">Local MAC</string>
+    <string name="main_menu_app">APPs</string>
+    <string name="settings_system">System setting</string>
+    <string name="settings_other">Other</string>
+    <string name="open_setting_failed">Open failed!</string>
+    <string name="ok">OK</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="cancel">Cancel</string>
+
+
     <string name="live">LIVE</string>
     <string name="vod">vod</string>
     <string name="scenery">scenery</string>
@@ -13,7 +30,6 @@
     <string name="goods_service">goods service</string>
     <string name="home_service">home service</string>
     <string name="check_service">check service</string>
-    <string name="cancel">cancel</string>
     <string name="submit">submit</string>
     <string name="money">money</string>
     <string name="year">year</string>

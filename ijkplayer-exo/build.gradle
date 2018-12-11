@@ -3,7 +3,7 @@ apply plugin: 'com.android.library'
 android {
     // http://tools.android.com/tech-docs/new-build-system/tips
     //noinspection GroovyAssignabilityCheck
-    compileSdkVersion 25
+    compileSdkVersion 26
     //noinspection GroovyAssignabilityCheck
     buildToolsVersion '28.0.3'
 
@@ -12,7 +12,7 @@ android {
     }
     defaultConfig {
         minSdkVersion 9
-        targetSdkVersion 25
+        targetSdkVersion 26
     }
     buildTypes {
         release {
@@ -23,11 +23,11 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    api fileTree(dir: 'libs', include: ['*.jar'])
 
-    compile 'com.google.android.exoplayer:exoplayer:r1.5.11'
+    api 'com.google.android.exoplayer:exoplayer:r1.5.11'
 
-    compile project(':ijkplayer-java')
-    // compile 'tv.danmaku.ijk.media:ijkplayer-java:0.8.2'
+    api project(':ijkplayer-java')
+    // api 'tv.danmaku.ijk.media:ijkplayer-java:0.8.2'
 }
 

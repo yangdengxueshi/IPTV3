@@ -52,6 +52,7 @@
         <activity android:name=".activity.live.LivePlayerActivity"/>
         <activity android:name=".activity.hotel.SceneryActivity"/>
         <activity android:name=".activity.introduce.HotelIntroduceActivity"/>
+        <activity android:name=".activity.SettingsActivity"/>
     </application>
 
 </manifest>

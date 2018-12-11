@@ -15,8 +15,8 @@ import java.util.List;
 public class SceneryActivity extends BaseActivity {
 
     private Context context;
-    private List<String> sceneryDataList = new ArrayList<String>();
     private SceneryIntroAdapter sceneryIntroAdapter;
+    private List<String> sceneryDataList = new ArrayList<String>();
 
     @Override
     protected void initDate() {

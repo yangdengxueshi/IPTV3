@@ -33,7 +33,6 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
             public View onCreateView(View parent, String name, Context context, AttributeSet attrs) {
                 AppCompatDelegate delegate = getDelegate();
                 View view = delegate.createView(parent, name, context, attrs);
-
                 if (view != null && (view instanceof TextView)) {
                     ((TextView) view).setTypeface(BaseApplication.typeface);
                 }
@@ -42,7 +41,6 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
 
         });
         super.onCreate(savedInstanceState);
-
         initView();
         initListener();
         initDate();
